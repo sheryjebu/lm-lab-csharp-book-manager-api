@@ -25,6 +25,13 @@ namespace BookManagerApi.Services
             return book;
         }
 
+        public Book Delete(long id, Book book)
+        {
+            _context.Remove(id);
+            _context.SaveChanges();
+            return book;
+        }
+
         public Book Update(long id, Book book)
         {
             var existingBookFound = FindBookById(id);
