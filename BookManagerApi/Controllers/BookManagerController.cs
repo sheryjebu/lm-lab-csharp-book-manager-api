@@ -47,7 +47,7 @@ namespace BookManagerApi.Controllers
             _bookManagementService.Create(book);
             return CreatedAtAction(nameof(GetBookById), new { id = book.Id }, book);
         }
-        [HttpPost]
+        [HttpDelete("{id}")]
         public ActionResult<Book> DeleteBook(long id, Book book)
         {
             _bookManagementService.Delete(id, book);
